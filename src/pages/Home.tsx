@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
   ];
 
   const categories = [
-    { title: "Men's Collection", image: 'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=webp&auto=format&fit=crop&q=80&w=600' },
+    { title: "Men's Collectings", image: 'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?fm=webp&auto=format&fit=crop&q=80&w=600' },
     { title: "Women's Collection", image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?fm=webp&auto=format&fit=crop&q=80&w=600' },
     { title: "Accessories", image: 'https://images.unsplash.com/photo-1509319117193-57bab727e09d?fm=webp&auto=format&fit=crop&q=80&w=600' },
     { title: "Jackets", image: 'https://images.unsplash.com/photo-1559551409-dadc959f76b8?fm=webp&auto=format&fit=crop&q=80&w=600' },
