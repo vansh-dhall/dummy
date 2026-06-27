@@ -5,4 +5,4 @@ Disallow: /admin/
 Disallow: /cart/
 Disallow: /checkout/
 
-Sitemap: https://crownclothing.com/sitemap.xml
+Sitemap: https://dummy-blush-eta.vercel.app/sitemap.xml
