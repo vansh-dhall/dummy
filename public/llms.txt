@@ -1,0 +1,17 @@
+# Crown Clothing
+
+Premium Streetwear & Modern Fashion
+
+## Features
+- E-commerce platform for premium streetwear
+- Oversized T-shirts, Cargo Pants, Heavyweight Hoodies, Jackets
+- Wishlist and Cart functionality
+- Modern, responsive design
+
+## Important Links
+- Home: /
+- Products: /products
+- About: /about
+- Blog: /blog
+- Contact: /contact
+- Wishlist: /wishlist
