@@ -167,7 +167,7 @@ export const Home: React.FC = () => {
                   Discover oversized t-shirts, hoodies, and modern fashion designed for confidence and comfort.
                 </p> */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif text-gray-900 font-bold tracking-tight leading-[1.05] mb-6">
-  <span className="whitespace-nowrap">CrownS Clothing </span><br />
+  <span className="whitespace-nowrap">CrownSn Clothing </span><br />
   <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600">
     Premium Streetwear
   </span><br />
