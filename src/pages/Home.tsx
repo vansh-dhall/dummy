@@ -1,11 +1,32 @@
-import React from 'react';
-import { motion } from 'motion/react';
+// import React from 'react';
+// import { motion } from 'motion/react';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ShieldCheck, TrendingUp, Truck, Undo2, Star, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
+  const heroImages = [
+  'https://images.unsplash.com/photo-1483985988355-763728e1935b?fm=webp&auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?fm=webp&auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1492288991661-058aa541ff43?fm=webp&auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?fm=webp&auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1469334031218-e382a71b716b?fm=webp&auto=format&fit=crop&q=80&w=1200',
+];
+
+const [current, setCurrent] = useState(0);
+const [isPaused, setIsPaused] = useState(false);
+
+useEffect(() => {
+  if (isPaused) return;
+  const timer = setInterval(() => {
+    setCurrent((prev) => (prev + 1) % heroImages.length);
+  }, 3500); // 3.5 second me image badlegi
+  return () => clearInterval(timer);
+}, [isPaused, heroImages.length]);
 
   const features = [
     { icon: <Truck className="w-6 h-6" />, title: 'Free Shipping', desc: 'On orders over ₹999' },
@@ -206,7 +227,7 @@ export const Home: React.FC = () => {
             >
               <div className="relative w-full max-w-md xl:max-w-lg h-full">
                 {/* Main Image Container */}
-                <div className="absolute inset-0 bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-2xl z-20">
+                {/* <div className="absolute inset-0 bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-2xl z-20">
                   <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?fm=webp&auto=format&fit=crop&q=80&w=1200"
                     alt="Premium Streetwear"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
@@ -215,7 +236,49 @@ export const Home: React.FC = () => {
                     width="1200"
                     height="1800"
                    />
-                </div>
+                </div> */}
+                {/* Main Image Slider */}
+<div
+  className="absolute inset-0 bg-gray-200 rounded-[2.5rem] overflow-hidden shadow-2xl z-20 group cursor-pointer"
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}
+>
+  {/* Hover pe image halka zoom hogi */}
+  <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
+    <AnimatePresence>
+      <motion.img
+        key={current}
+        src={heroImages[current]}
+        alt="Premium Streetwear"
+        className="absolute inset-0 w-full h-full object-cover"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        decoding="async"
+        width="1200"
+        height="1800"
+      />
+    </AnimatePresence>
+  </div>
+
+  {/* Hover pe halka dark gradient */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+  {/* Dots */}
+  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    {heroImages.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => setCurrent(i)}
+        aria-label={`Show image ${i + 1}`}
+        className={`h-2 rounded-full transition-all duration-300 ${
+          i === current ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
+        }`}
+      />
+    ))}
+  </div>
+</div>
                 {/* Decorative Elements */}
                 {/* <div className="absolute -top-10 -right-10 w-full h-full border-2 border-gray-900 rounded-[2.5rem] z-10 hidden xl:block"></div> */}
                 
