@@ -24,7 +24,7 @@ useEffect(() => {
   if (isPaused) return;
   const timer = setInterval(() => {
     setCurrent((prev) => (prev + 1) % heroImages.length);
-  }, 2000); // 3.5 second me image badlegi
+  }, 3000); // 3.5 second me image badlegi
   return () => clearInterval(timer);
 }, [isPaused, heroImages.length]);
 
