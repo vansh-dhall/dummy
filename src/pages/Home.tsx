@@ -217,7 +217,7 @@ export const Home: React.FC = () => {
                    />
                 </div>
                 {/* Decorative Elements */}
-                <div className="absolute -top-10 -right-10 w-full h-full border-2 border-gray-900 rounded-[2.5rem] z-10 hidden xl:block"></div>
+                {/* <div className="absolute -top-10 -right-10 w-full h-full border-2 border-gray-900 rounded-[2.5rem] z-10 hidden xl:block"></div> */}
                 
                 {/* Floating Badge */}
                 <motion.div 
@@ -526,7 +526,7 @@ export const Home: React.FC = () => {
 
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900">
-        Frequently Asked Questionsssssss
+        Frequently Asked Questions
       </h2>
 
       <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
