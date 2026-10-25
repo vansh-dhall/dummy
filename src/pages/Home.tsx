@@ -24,7 +24,7 @@ useEffect(() => {
   if (isPaused) return;
   const timer = setInterval(() => {
     setCurrent((prev) => (prev + 1) % heroImages.length);
-  }, 3500); // 3.5 second me image badlegi
+  }, 2000); // 3.5 second me image badlegi
   return () => clearInterval(timer);
 }, [isPaused, heroImages.length]);
 
@@ -244,7 +244,7 @@ useEffect(() => {
   onMouseLeave={() => setIsPaused(false)}
 >
   {/* Hover pe image halka zoom hogi */}
-  <div className="w-full h-full transition-transform duration-700 group-hover:scale-105">
+  <div className="w-full h-full transition-transform duration-200 group-hover:scale-105">
     <AnimatePresence>
       <motion.img
         key={current}
@@ -263,7 +263,7 @@ useEffect(() => {
   </div>
 
   {/* Hover pe halka dark gradient */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
   {/* Dots */}
   <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
